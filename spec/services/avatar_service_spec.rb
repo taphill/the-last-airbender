@@ -9,6 +9,15 @@ RSpec.describe AvatarService, type: :service do
       first_result = results.first
       expect(first_result).to have_key(:name)
       expect(first_result[:name]).to be_a(String)
+
+      expect(first_result).to have_key(:affiliation)
+      expect(first_result[:affiliation]).to be_a(String)
+
+      expect(first_result).to have_key(:allies)
+      expect(first_result[:allies]).to be_a(Array)
+
+      expect(first_result).to have_key(:enemies)
+      expect(first_result[:enemies]).to be_a(Array)
     end
   end
 end
