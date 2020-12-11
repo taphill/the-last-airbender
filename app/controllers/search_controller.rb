@@ -6,8 +6,10 @@ class SearchController < ApplicationController
 
     response = conn.get("v1/characters?affiliation=#{nation}")
 
-    # json = JSON.parse(response.body, symbolize_names: true)
+    json = JSON.parse(response.body, symbolize_names: true) 
     
-    @nation_members = JSON.parse(response.body, symbolize_names: true) 
+    @nation_members = json.map do |member_data|
+      NationMember.new(member_data)  
+    end
   end
 end

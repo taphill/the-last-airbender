@@ -5,23 +5,23 @@
     <p>---------------------------------------------------------------------------------------</p>
     <ul>
       <h3>Name</h3>
-      <li class="name"><%= member[:name]  %></li>
-      <li class="affiliation"><%= member[:affiliation] %></li>
+      <li class="name"><%= member.name  %></li>
+      <li class="affiliation"><%= member.affiliation %></li>
 
       <h3 class="photo">Photo</h3>
-      <% if member[:photoUrl] %>
-        <%= image_tag(member[:photoUrl]) %>
+      <% if member.photo %>
+        <%= image_tag(member.photo) %>
       <% else %>
         <p>No image of this member</p>
       <% end %>
 
       <h3>Allies</h3>
-      <% member[:allies].each do |ally| %>
+      <% member.allies.each do |ally| %>
         <li class="allies"><%= ally %></li>
       <% end %>
 
       <h3>Enemies</h3>
-      <% member[:enemies].each do |enemy| %>
+      <% member.enemies.each do |enemy| %>
         <li class="enemies"><%= enemy %></li>
       <% end %>
     </ul>
